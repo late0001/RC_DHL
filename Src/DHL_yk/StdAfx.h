@@ -43,9 +43,9 @@ Windows 7								WINVER=0x0600
 #include "macros.h"
 #include "vfw.h" // DrawDibOpen
 #pragma comment(lib, "vfw32.lib")
-#include "SkinH.h"
+//#include "SkinH.h"
 //#pragma comment (lib,"SkinHu.lib")
-#pragma comment ( lib, "SkinH.lib" )
+//#pragma comment ( lib, "SkinH.lib" )
 
 enum 
 {

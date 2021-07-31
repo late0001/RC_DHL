@@ -157,6 +157,7 @@ BEGIN_MESSAGE_MAP(CPcView, CListView)
     ON_MESSAGE(WM_FREE_NO, OnFindNo)
 	////////////////////////////////////////////
 //DOSS
+ON_WM_CREATE()
 END_MESSAGE_MAP()
 
 /////////////////////////////////////////////////////////////////////////////
@@ -262,50 +263,7 @@ void CPcView::NewInitialUpdate()
 {
 	CListView::OnInitialUpdate();
 	
-	m_pListCtrl = &GetListCtrl();
-
-	I_ImageList.Create(16, 16, ILC_COLOR32|ILC_MASK,10, 0);
-	HICON hIcon = NULL;// 以下为加入3个图标资源
-	hIcon = (HICON)::LoadImage(::AfxGetInstanceHandle(),MAKEINTRESOURCE(IDI_SHIPIN), IMAGE_ICON, 32, 32, 0);
-	I_ImageList.Add(hIcon);
-	hIcon = (HICON)::LoadImage(::AfxGetInstanceHandle(),MAKEINTRESOURCE(IDI_USER), IMAGE_ICON, 32, 32, 0);
-	I_ImageList.Add(hIcon);
-	ListView_SetImageList(m_pListCtrl->m_hWnd,I_ImageList, LVSIL_SMALL); 
 	
-	m_pListCtrl->SetExtendedStyle(LVS_EX_CHECKBOXES | LVS_EX_FULLROWSELECT /*| LVS_EX_FLATSB*/ |
-		LVS_EX_ONECLICKACTIVATE | LVS_EX_UNDERLINEHOT |LVS_EX_SUBITEMIMAGES | LVS_EX_GRIDLINES );
-/*
-		m_pListCtrl->SetExtendedStyle(
-		LVS_EX_FULLROWSELECT
-		//|LVS_EX_HEADERDRAGDROP//报表头可以拖拽
-		//|LVS_EX_ONECLICKACTIVATE//单击激活
-		//|LVS_EX_GRIDLINES//绘制表格
-		//|LVS_EX_FLATSB//扁平滚动条
-		//|LVS_EX_MULTIWORKAREAS
-		//| LVIF_IMAGE 
-		//| LVIF_PARAM //带复选框
-		//| LVIF_TEXT
-		//|LVIF_IMAGE 
-		//| LVIF_TEXT
-		//LVS_EX_CHECKBOXES //带复选框
-		//LVS_EX_TWOCLICKACTIVATE//双击激活
-		|LVIS_STATEIMAGEMASK //带下划线
-		);
-*/	
-	// 改变在线主机字体颜色
-	
-	//m_pListCtrl->SetTextColor(RGB(237,96,61)); // 橘色显示
-	//m_pListCtrl->SetTextColor(RGB(240,0,150)); //粉红显示
-	m_pListCtrl->SetTextColor(RGB(0,100,255)); // 蓝色显示
-	
-//	m_pListCtrl->SetTextBkColor(-1); 
-	
-	for (int i = 0; i < g_Column_Count; i++)
-	{
-		m_pListCtrl->InsertColumn(i, g_Column_Data[i].title);
-		m_pListCtrl->SetColumnWidth(i, g_Column_Data[i].nWidth);
-		g_Column_Width += g_Column_Data[i].nWidth; // 总宽度
-	}
 	
 //	HWND hWndHeader = m_pListCtrl->GetDlgItem(0)->GetSafeHwnd();
 //	m_header.SubclassWindow(hWndHeader);
@@ -2117,3 +2075,57 @@ void CPcView::OnAqglYp()
 //
 //	// Do not call CListView::OnPaint() for painting messages
 //}
+
+
+int CPcView::OnCreate(LPCREATESTRUCT lpCreateStruct)
+{
+	if (CListView::OnCreate(lpCreateStruct) == -1)
+		return -1;
+
+	// TODO:  在此添加您专用的创建代码
+	m_pListCtrl = &GetListCtrl();
+
+	I_ImageList.Create(16, 16, ILC_COLOR32|ILC_MASK,10, 0);
+	HICON hIcon = NULL;// 以下为加入3个图标资源
+	hIcon = (HICON)::LoadImage(::AfxGetInstanceHandle(),MAKEINTRESOURCE(IDI_SHIPIN), IMAGE_ICON, 32, 32, 0);
+	I_ImageList.Add(hIcon);
+	hIcon = (HICON)::LoadImage(::AfxGetInstanceHandle(),MAKEINTRESOURCE(IDI_USER), IMAGE_ICON, 32, 32, 0);
+	I_ImageList.Add(hIcon);
+	ListView_SetImageList(m_pListCtrl->m_hWnd,I_ImageList, LVSIL_SMALL); 
+	
+	m_pListCtrl->SetExtendedStyle(LVS_EX_CHECKBOXES | LVS_EX_FULLROWSELECT /*| LVS_EX_FLATSB*/ |
+		LVS_EX_ONECLICKACTIVATE | LVS_EX_UNDERLINEHOT |LVS_EX_SUBITEMIMAGES | LVS_EX_GRIDLINES );
+/*
+		m_pListCtrl->SetExtendedStyle(
+		LVS_EX_FULLROWSELECT
+		//|LVS_EX_HEADERDRAGDROP//报表头可以拖拽
+		//|LVS_EX_ONECLICKACTIVATE//单击激活
+		//|LVS_EX_GRIDLINES//绘制表格
+		//|LVS_EX_FLATSB//扁平滚动条
+		//|LVS_EX_MULTIWORKAREAS
+		//| LVIF_IMAGE 
+		//| LVIF_PARAM //带复选框
+		//| LVIF_TEXT
+		//|LVIF_IMAGE 
+		//| LVIF_TEXT
+		//LVS_EX_CHECKBOXES //带复选框
+		//LVS_EX_TWOCLICKACTIVATE//双击激活
+		|LVIS_STATEIMAGEMASK //带下划线
+		);
+*/	
+	// 改变在线主机字体颜色
+	
+	//m_pListCtrl->SetTextColor(RGB(237,96,61)); // 橘色显示
+	//m_pListCtrl->SetTextColor(RGB(240,0,150)); //粉红显示
+	m_pListCtrl->SetTextColor(RGB(0,100,255)); // 蓝色显示
+	
+//	m_pListCtrl->SetTextBkColor(-1); 
+	
+	for (int i = 0; i < g_Column_Count; i++)
+	{
+		m_pListCtrl->InsertColumn(i, g_Column_Data[i].title);
+		m_pListCtrl->SetColumnWidth(i, g_Column_Data[i].nWidth);
+		g_Column_Width += g_Column_Data[i].nWidth; // 总宽度
+	}
+	return 0;
+}

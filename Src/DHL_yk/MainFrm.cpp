@@ -1047,7 +1047,7 @@ void CMainFrame::OnTools()
 
 void CMainFrame::OnAddSkin()// 加载资源皮肤
 {
-
+#if 0
 	HGLOBAL hRes;
 	HRSRC hResInfo;
 	HINSTANCE hinst = AfxGetInstanceHandle();
@@ -1066,7 +1066,7 @@ void CMainFrame::OnAddSkin()// 加载资源皮肤
 //			SkinH_AdjustHSV(0,-100,0);
 		}
 	}
-
+#endif
 }
 
 /*

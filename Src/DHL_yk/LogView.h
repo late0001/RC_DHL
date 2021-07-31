@@ -55,6 +55,8 @@ protected:
 private:
 	CListCtrl* m_pLogList;
 	CImageList I_LogList;
+public:
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 };
 
 /////////////////////////////////////////////////////////////////////////////

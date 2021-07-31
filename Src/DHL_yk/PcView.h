@@ -136,6 +136,8 @@ private:
 	WORD m_AutoTask;
 //DOSS
 
+public:
+	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 };
 
 /////////////////////////////////////////////////////////////////////////////
