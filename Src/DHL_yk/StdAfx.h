@@ -4,7 +4,7 @@
 //
 
 #undef  WINVER  
-#define  WINVER  0X0500 
+#define  WINVER  0X0501 
 
 /*
 Windows 95¡¢98 and Windows NT   4.0     WINVER=0x0400         

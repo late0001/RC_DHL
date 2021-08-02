@@ -21,7 +21,8 @@ CIniFile::CIniFile()
 	char szAppName[MAX_PATH];
 	int  len;
 
-	::GetModuleFileName(AfxGetInstanceHandle(), szAppName,MAX_PATH);
+	//::GetModuleFileName(AfxGetInstanceHandle(), szAppName,MAX_PATH);
+	::GetModuleFileName(NULL, szAppName, MAX_PATH);
 	len = strlen(szAppName);
 	for(int i=len; i>0; i--)
 	{

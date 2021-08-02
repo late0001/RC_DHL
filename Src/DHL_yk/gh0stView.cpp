@@ -397,12 +397,13 @@ void CGh0stView::OnPaint()
 	CPaintDC dc(this); // device context for painting
 
 	//CFont font;
-	font.CreatePointFont(9*10,_T("Î¢ÈíÑÅºÚ"),&dc);
-	m_wndTabControl.SetFont(&font);
+	//font.CreatePointFont(9*10,_T("Î¢ÈíÑÅºÚ"),&dc);
+//	m_wndTabControl.SetFont(&font);
 	
 	// TODO: Add your message handler code here
 	
 	// Do not call CView::OnPaint() for painting messages
+	CView::OnPaint();
 }
 
 void CGh0stView::OnShowWindow(BOOL bShow, UINT nStatus) 

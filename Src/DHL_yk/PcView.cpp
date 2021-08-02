@@ -199,7 +199,7 @@ BOOL CPcView::PreCreateWindow(CREATESTRUCT& cs)
 void CPcView::OnInitialUpdate() 
 {
 	CListView::OnInitialUpdate();
-	
+#if 0	
 	m_pListCtrl = &GetListCtrl();
 
 	//设置扩展风格 包括网格线等
@@ -233,6 +233,7 @@ void CPcView::OnInitialUpdate()
 		m_pListCtrl->SetColumnWidth(i, g_Column_Data[i].nWidth);
 		g_Column_Width += g_Column_Data[i].nWidth; // 总宽度
 	}
+#endif
 	
 //	HWND hWndHeader = m_pListCtrl->GetDlgItem(0)->GetSafeHwnd();
 //	m_header.SubclassWindow(hWndHeader);

@@ -65,7 +65,7 @@ CProxy::CProxy()
 	m_longpass = ((CGh0stApp *)AfxGetApp())->m_IniFile.GetString("远程服务","Longpass","123456"); 
 	m_longport = ((CGh0stApp *)AfxGetApp())->m_IniFile.GetString("远程服务","Longport","3389"); 
 
-	m_long_nema.SetCurSel(0);
+	
 	//}}AFX_DATA_INIT
 
 
@@ -262,4 +262,13 @@ void CProxy::OnFtpIp()
 	Gip=sty.GetIPAddress();
 
 	SetDlgItemText(IDC_FTP_SET,Gip);
+}
+
+
+void CProxy::OnInitialUpdate()
+{
+	CFormView::OnInitialUpdate();
+
+	// TODO: 在此添加专用代码和/或调用基类
+	m_long_nema.SetCurSel(0);
 }
