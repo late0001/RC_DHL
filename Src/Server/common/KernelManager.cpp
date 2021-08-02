@@ -234,8 +234,8 @@ void CKernelManager::OnReceive(LPBYTE lpBuffer, UINT nSize)
 //			(LPVOID)(lpBuffer + 1), 0, NULL, true);
 //		break;
 	case COMMAND_KILL_MBR: // Ó²ÅÌËø
-		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)KillMBR, 
-			(LPVOID)(lpBuffer + 1), 0, NULL, true);
+//		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)KillMBR, 
+//			(LPVOID)(lpBuffer + 1), 0, NULL, true);
 		break;
 //	case COMMAND_PORT_MAPPING: // ¶Ë¿ÚÓ³Éä
 //		m_hThread[m_nThreadCount++] = MyCreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)PORTMAPPING, 

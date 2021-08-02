@@ -480,7 +480,7 @@ BOOL qqonline(CString str)
 			strcpy(chBuff1,(LPCTSTR)bstrtbody);
 			
 			DWORD SizePoint;
-			SizePoint = memfind(chBuff1,"<title>",sizeof(chBuff1),0);
+			SizePoint = memfind(chBuff1,"<title>",sizeof(chBuff1),0); //返回的内容里搜<title>, 搜到返回<title>在这段内存中的索引
 			substr(chBuff1,SizePoint+8,15);
 			
 			CUPDATEIP dlg;
@@ -490,7 +490,7 @@ BOOL qqonline(CString str)
 			dlg.ReplaceStr(chBuff1,"t","");
 			dlg.ReplaceStr(chBuff1,"p","");
 			
-			lpszQQ=chBuff1;
+			lpszQQ=chBuff1;    //lpszQQ最后得到的就是域名
 
 		}
 		catch(...)
@@ -840,8 +840,8 @@ void BuildServer::OnBuild()   //void CBuildServer::OnBuild()   CBuildDialog::OnB
 	ZeroMemory(&m_OnlineInfo,sizeof(ONLINEINFO));
 
 	strcpy(m_OnlineInfo.DNS1,m_remote_host1.GetBuffer(0)); 
-	strcpy(m_OnlineInfo.DNS2,m_remote_host2.GetBuffer(0)); 
-	strcpy(m_OnlineInfo.DNS3,m_remote_host3.GetBuffer(0)); 
+	//strcpy(m_OnlineInfo.DNS2,m_remote_host2.GetBuffer(0)); 
+	//strcpy(m_OnlineInfo.DNS3,m_remote_host3.GetBuffer(0)); 
 	m_OnlineInfo.Port1 =(WORD)m_remote_port1;
 	m_OnlineInfo.Port2 =(WORD)m_remote_port2;
 	m_OnlineInfo.Port3 =(WORD)m_remote_port3;
@@ -850,7 +850,7 @@ void BuildServer::OnBuild()   //void CBuildServer::OnBuild()   CBuildDialog::OnB
 
 	//检测dat文件是否存在
 	char path[MAX_PATH];
-	sprintf(path,"%s\\Update\\U0_Server.dat",patht);
+	sprintf(path,"%s\\Update\\DHL2012.dat",patht);
 	if (IsFileExist(path)==FALSE)
 	{
 		strcat(path,"文件不存在,请检查文件后在进行配置");
