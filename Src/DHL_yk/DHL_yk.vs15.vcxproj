@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -15,18 +15,18 @@
     <SccLocalPath />
     <Keyword>MFCProj</Keyword>
     <ProjectGuid>{578EC0AB-EB86-4E5D-968D-18224964D5D4}</ProjectGuid>
-    <ProjectName>DHL_yk.vs12</ProjectName>
+    <ProjectName>DHL_yk.vs15</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v100</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -44,15 +44,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>..\bin\</OutDir>
-    <IntDir>.\vs12_Release\</IntDir>
+    <IntDir>.\vs15_Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
-    <TargetName>U0_2015_vs12</TargetName>
+    <TargetName>U0_2015_vs15</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\bin\</OutDir>
-    <IntDir>.\vs12_Debug\</IntDir>
+    <IntDir>.\vs15_Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>U0_2015_vs12d</TargetName>
+    <TargetName>U0_2015_vs15d</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -64,11 +64,11 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalIncludeDirectories>../common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\vs12_Release\</AssemblerListingLocation>
+      <AssemblerListingLocation>.\vs15_Release\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\vs12_Release\DHL_yk.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\vs12_Release\</ObjectFileName>
-      <ProgramDataBaseFileName>.\vs12_Release\</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>.\vs15_Release\DHL_yk.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\vs15_Release\</ObjectFileName>
+      <ProgramDataBaseFileName>.\vs15_Release\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -83,14 +83,14 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\vs12_Release\DHL_yk.bsc</OutputFile>
+      <OutputFile>.\vs15_Release\DHL_yk.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <OutputFile>../Bin/U0_2015_vs12.exe</OutputFile>
+      <OutputFile>../Bin/U0_2015_vs15.exe</OutputFile>
       <AdditionalDependencies>../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
     </Link>
@@ -105,11 +105,11 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <AdditionalIncludeDirectories>../common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AssemblerListingLocation>.\vs12_Debug\</AssemblerListingLocation>
+      <AssemblerListingLocation>.\vs15_Debug\</AssemblerListingLocation>
       <BrowseInformation>true</BrowseInformation>
-      <PrecompiledHeaderOutputFile>.\vs12_Debug\DHL_yk.pch</PrecompiledHeaderOutputFile>
-      <ObjectFileName>.\vs12_Debug\</ObjectFileName>
-      <ProgramDataBaseFileName>.\vs12_Debug\</ProgramDataBaseFileName>
+      <PrecompiledHeaderOutputFile>.\vs15_Debug\DHL_yk.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>.\vs15_Debug\</ObjectFileName>
+      <ProgramDataBaseFileName>.\vs15_Debug\</ProgramDataBaseFileName>
     </ClCompile>
     <Midl>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -124,15 +124,15 @@
     </ResourceCompile>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\vs12_Debug\DHL_yk.bsc</OutputFile>
+      <OutputFile>.\vs15_Debug\DHL_yk.bsc</OutputFile>
     </Bscmake>
     <Link>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <OutputFile>../Bin/U0_2015_vs12d.exe</OutputFile>
-      <AdditionalDependencies>../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>../Bin/U0_2015_vs15d.exe</OutputFile>
+      <AdditionalDependencies>../../lib/G729a.lib;../../lib/UUID.LIB;../../lib/zlib.lib;../../lib/SkinH.lib;legacy_stdio_definitions.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/SAFESEH:NO %(AdditionalOptions)</AdditionalOptions>
     </Link>
   </ItemDefinitionGroup>
