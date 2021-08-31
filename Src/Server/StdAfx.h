@@ -15,7 +15,8 @@
 //#pragma comment(linker, "/opt:nowin98 /IGNORE:4078 /MERGE:.rdata=.text /MERGE:.data=.text /section:.text,ERW") //区段合并
 
 ///////////////////////////////////////////////////////////////////////////////
-
+#define WINVER 0x501
+#define _WIN32_WINNT 0x501
 #include <afxwin.h>
 
 extern WORD    Installope;     //安装运行
