@@ -175,7 +175,7 @@ void CDDOSAttackDlg::OnShowWindow(BOOL bShow, UINT nStatus)
 #if _MSC_VER == 1600
 			AnimateWindow(400, AW_CENTER);
 #endif
-#if _MSC_VER == 1900
+#if _MSC_VER >= 1900
 			AnimateWindow(400, AW_CENTER);
 #endif
 
